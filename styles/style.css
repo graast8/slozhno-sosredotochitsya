@@ -11,9 +11,10 @@ html, body {
 
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  background-attachment: fixed;
   background-color: #000028;
   max-width: 1024px;
-  max-height: 98vh;
+  max-height: 100vh;
   display: flex;
   flex-direction: column;
   gap: 60px;
@@ -223,7 +224,6 @@ html, body {
 }
 
 .paragraph-4 {
-  
   grid-area: 2 / 2 / 3 / 3;
 }
 
@@ -253,7 +253,6 @@ html, body {
   display: grid;
   grid-template-columns: repeat(3, minmax(190px, 1fr));
   gap: 20px;
-  
 }
 
 .card {
@@ -287,7 +286,7 @@ html, body {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(3, 1fr);
-  min-height: 97vh;
+  min-height: 100vh;
 }
 
 .footer__header {
@@ -308,7 +307,6 @@ html, body {
 }
 
 .footer_dec-1 {
-  
   justify-self: start;
   align-self: end;
 }
@@ -329,10 +327,7 @@ html, body {
 }
 
 @media ( width <= 768px) {
-  .header{
-    
-  }
-  
+
   .header__title {
     align-self: center;
   }
