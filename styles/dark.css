@@ -4,6 +4,18 @@
   переключая тему
 */
 
+:root.theme-dark {
+  --font-family: "IBM Plex Mono";
+  --font-weight-bold: 700;
+  --font-weight-regular: 400;
+  --font-size-reg: 18px;
+  --font-size-title: 157px;
+  --color-dark-blue: #000028;
+  --color-magenta: #FF0070;
+  --font-color-desc: #F1B2CE;
+  --color-title: #DB00FF;
+}
+
 .page.theme_dark {
   /* сохраните этот селектор в приведённом виде.
     Так стили написанные ниже будут иметь больший вес,
