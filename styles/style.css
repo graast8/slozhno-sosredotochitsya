@@ -44,6 +44,7 @@ html, body {
 .header__theme-menu {
   grid-row: 1;
   grid-column: 2;
+  margin-block-start: 10px;
 }
 
 .lightbulb {
@@ -86,6 +87,7 @@ html, body {
   border-left: 1px solid var(--color-magenta);
   border-bottom: 1px solid var(--color-magenta);
   align-self: end;
+  margin-block-end: 15px;
 }
 
 .rectangle-2 {
@@ -107,6 +109,7 @@ html, body {
   font-family: var(--font-family, Helvetica, Arial, sans-serif);
   color: var(--color-title);
   text-shadow: 4px 4px 0 var(--color-magenta);
+  margin-inline-start: -20px;
 }
 
 .header__title-decor {
@@ -115,6 +118,7 @@ html, body {
   grid-row: 3;
   grid-column: span 3;
   max-width: 490px;
+  margin-block-end: 45px;
 }
 
 .header__theme-menu-button {
