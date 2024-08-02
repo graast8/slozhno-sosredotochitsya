@@ -42,7 +42,7 @@ html, body {
 
 .header__theme-menu {
   grid-row: 1;
-  grid-column: 3;
+  grid-column: 2;
   margin-block-start: 20px;
   z-index: 1;
 }
