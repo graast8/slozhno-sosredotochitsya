@@ -4,6 +4,8 @@
   переключая тему
 */
 
+
+
 :root {
   --light-background-color: #FFF1F7;
   --font-color-light-pink: #FFC2E6;
@@ -16,79 +18,8 @@
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
-
-  background-color: var(--light-background-color);
-  
-  .header {
-    background-image: url(../images/cover-image-light.png);
-  }
-
-  .title-decor {
-    background-color: var(--font-background);
-    color: var(--font-color-light-grey);
-  }
-
-  .lightbulb {
-    z-index: -1;
-  }
-
   .lightbulb__text {
-    color: var(--font-color-light-pink);
-  }
-  
-  .header__title {
-    color: var(--font-color-light-pink);
-  }
-
-  .title__no-background {
-    color: var(--font-color-light-grey);
-  }
-
-  .header__theme-menu-button {
-    color: var(--font-color-light-grey);
-  }
-
-  .header__theme-menu-button_active {
-    border: 1px solid var(--font-color-light-grey);
-  }
-
-  .header__theme-menu-button:hover {
-    outline: 1px solid rgba(53, 52, 48, 40%);
-  }
-
-  .header__theme-menu-button:focus {
-    outline: none;
-    text-decoration: underline var(--font-color-light-grey);
-  } 
-
-  .rectangle-1 {
-    border-left: 1px solid var(--font-color-light-grey);
-    border-bottom: 1px solid var(--font-color-light-grey);
-  }
-
-  .rectangle-2 {
-    border-right: 1px solid var(--font-color-light-grey);
-    border-top: 1px solid var(--font-color-light-grey);
-  }
-
-  .description {
-    color: var(--font-color-light-grey);
-  }
-
-  .title-decor-regular {
-    background-color: var(--font-background);
-  }
-
-  .footer__header {
-    color: var(--font-color-light-pink);
+    display: none;
   }
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    --light-background-color: #FFF1F7;
-  --font-color-light-pink: #FFC2E6;
-  --font-color-light-grey: #353430;
-  --font-background: #FF8DCB;
-  }
-}
