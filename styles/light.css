@@ -11,6 +11,7 @@
   --font-color-light-pink: #FFC2E6;
   --font-color-light-grey: #353430;
   --font-background: #FF8DCB;
+  --background-image-light: url(../images/cover-image-light.png);
 }
 
 .page.theme_light {
@@ -21,5 +22,6 @@
   .lightbulb__text {
     display: none;
   }
+
 }
 

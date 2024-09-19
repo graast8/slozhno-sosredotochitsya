@@ -3,16 +3,15 @@
 @import 'variables.css';
 
 
-
 html, body {
   max-width: 100%;
 }
 
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
-  background-attachment: fixed;
   background-image: var(--background-image);
   background-color: var(--color-dark-blue);
+  background-attachment: fixed;
   max-width: 1024px;
   display: flex;
   flex-direction: column;
@@ -30,7 +29,6 @@ html, body {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr min-content 1fr;
-  /* grid-auto-columns: 0px; */
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -59,7 +57,6 @@ html, body {
   height: 25px;
   border-right: 1px solid var(--color-magenta);
   border-top: 1px solid var(--color-magenta);
- 
 }
 
 .decorated-zone::after {
@@ -143,10 +140,6 @@ html, body {
   text-decoration: underline var(--color-magenta);
 } 
 
-.pseudo__decor {
-  grid-row: 1;
-}
-
 .header__theme-menu-list {
   display: flex;
   gap: 10px;
@@ -182,7 +175,6 @@ html, body {
 .description__container {
   display: grid;
   grid-template-rows: min-content;
-  row-gap: 25px;
 }
 
 .description {
@@ -208,6 +200,10 @@ html, body {
 
 .column_content {
   grid-row: 2;
+}
+
+.paragraph {
+  margin-block-end: 20px;
 }
 
 .gallery {
@@ -302,32 +298,11 @@ html, body {
   outline: 1px solid var(--font-color-desc);
 }
 
-
 .page.theme_light {
-  
-  .page {
-    background-color: #FFF1F7;
-  }
+  background-image: var(--background-image-light);
 
-  .header {
-    background-image: url(../images/cover-image-light.png);
-  }
-
-  .title-decor {
-    background-color: var(--font-background);
-    color: var(--font-color-light-grey);
-  }
-
-  .lightbulb__text {
-    color: var(--font-color-light-pink);
-  }
-  
   .header__title {
     color: var(--font-color-light-pink);
-  }
-
-  .title__no-background {
-    color: var(--font-color-light-grey);
   }
 
   .header__theme-menu-button {
@@ -339,29 +314,59 @@ html, body {
   }
 
   .header__theme-menu-button:hover {
-    outline: 1px solid rgba(53, 52, 48, 40%);
+    outline: 1px solid rgba(50, 49, 45, 0.4);
   }
 
   .header__theme-menu-button:focus {
-    outline: none;
     text-decoration: underline var(--font-color-light-grey);
-  } 
+  }
+
+  .decorated-zone::after {
+    border-left: 1px solid var(--font-color-light-grey);
+    border-bottom: 1px solid var(--font-color-light-grey);
+  }
+
+  .decorated-zone::before {
+    border-right: 1px solid var(--font-color-light-grey);
+    border-top: 1px solid var(--font-color-light-grey);
+  }
 
   .description {
     color: var(--font-color-light-grey);
+  }
+
+  .title-decor {
+    background-color: var(--font-background);
   }
 
   .title-decor-regular {
     background-color: var(--font-background);
   }
 
+  .title__no-background {
+    color: var(--font-color-light-grey);
+  }
+
   .footer__header {
     color: var(--font-color-light-pink);
   }
+
+  .footer::after {
+    border-left: 1px solid var(--font-color-light-grey);
+    border-bottom: 1px solid var(--font-color-light-grey);
+  }
+
+  .footer::before {
+    border-right: 1px solid var(--font-color-light-grey);
+    border-top: 1px solid var(--font-color-light-grey);
+  }
+
+  .link:focus {
+    outline: 1px solid var(--font-color-light-grey);
+  }
 }
 
-
-@media ( width <= 768px) {
+@media (min-width: 768px) and (max-width: 1023px) {
 
   .header__title-decor {
     max-width: 364px;
@@ -379,6 +384,11 @@ html, body {
 
   .content_section {
     grid-template-columns: 32% 68%;
+    padding-inline-end: 20px;
+  }
+
+  .column_paragraph {
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .footer__header {
@@ -387,7 +397,7 @@ html, body {
   }
 }
 
-@media (max-width <= 375px) {
+@media (max-width: 767px) {
 
   .header {
     padding: 0 10px 0px 10px;
@@ -424,29 +434,18 @@ html, body {
     padding: 0px;
   }
 
-  .side_content {
-    grid-template-columns: 1fr;
-  }
-
-  .paragraph {
-    padding: 0;
-  }
-
-  .section_2__title-container {
-    /* grid-area: 1 / 1 / 2 / 3; */
-  }
-
   .content_section {
     grid-template-columns: 1fr;
   }
-
+  
   .column_paragraph {
     grid-template-columns: 1fr;
-    row-gap: 20px;
+    grid-template-rows: min-content;
   }
 
   .column_content {
     grid-column: 1;
+    grid-row: span 3;
   }
 
   .section_3-container {
