@@ -451,12 +451,24 @@ html, body {
   }
 
   .header {
-    padding: 0 10px 0px 10px;
     gap: 0px;
     grid-template-columns: 1fr;
-    grid-template-rows: 80px repeat(4, minmax(min-content, 1fr));
-    min-height: 100dvh;
+    /* grid-template-rows: repeat(4, minmax(min-content, 1fr)); */
+    grid-template-rows: repeat(4, auto); /* Высота строк по содержимому */
+    min-height: 100vh;
+    height: auto;
+    width: 100%;
+    max-width: 100vw;
+    margin: 0px auto;
+    box-sizing: border-box;
   }
+
+  .header > * {
+    max-width: 100%; /* Вложенные элементы не выходят за пределы */
+    overflow: hidden; /* Убираем переполнение */
+    height: auto;
+}
+
 
   .header__theme-menu {
     grid-area: 2 / 1 / 3 / 2;
@@ -473,9 +485,9 @@ html, body {
   .header__title {
     grid-area: 3 / 1 / 4 / 2;
     font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-    line-height: 100px;
+    line-height: 0.8;
     margin: 0px;
-    
+    max-width: 100%;
   }
 
   .header__title-decor {
