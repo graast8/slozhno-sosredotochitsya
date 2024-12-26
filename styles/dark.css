@@ -11,11 +11,16 @@
   --font-weight-regular: 400;
   --font-size-reg: 18px;
   --font-size-title: 157px;
-  --color-dark-blue: #000028;
+  --backgorund-color: #000028;
   --color-magenta: #FF0070;
+  --font-shadow-color: #FF0070;
+  --font-background-color: #FF0070;
+  --minor-title-color: #FF0070;
   --font-color-desc: #F1B2CE;
   --color-title: #DB00FF;
   --background-image: url(../images/cover-image-dark.png);
+  --dark-font-color: #000028;
+  --button-hover-color: rgba(255, 0, 112, 40%);
 }
 
 .page.theme_dark {
@@ -23,7 +28,20 @@
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
-  .page {
-    background-color: var(--color-dark-blue);
-  }
+  --font-family: "IBM Plex Mono";
+  --font-weight-bold: 700;
+  --font-weight-regular: 400;
+  --font-size-reg: 18px;
+  --font-size-title: 157px;
+  --backgorund-color: #000028;
+  --color-magenta: #FF0070;
+  --font-shadow-color: #FF0070;
+  --font-background-color: #FF0070;
+  --minor-title-color: #FF0070;
+  --font-color-desc: #F1B2CE;
+  --color-title: #DB00FF;
+  --background-image: url(../images/cover-image-dark.png);
+  --dark-font-color: #000028;
+  --button-hover-color: rgba(255, 0, 112, 40%);
+  
 }

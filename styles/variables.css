@@ -7,9 +7,15 @@
   --font-weight-bold: 700;
   --font-weight-regular: 400;
   --font-size-reg: 18px;
-  --color-dark-blue: #000028;
+  --font-size-title: 157px;
+  --backgorund-color: #000028;
   --color-magenta: #FF0070;
+  --font-shadow-color: #FF0070;
+  --font-background-color: #FF0070;
+  --minor-title-color: #FF0070;
   --font-color-desc: #F1B2CE;
   --color-title: #DB00FF;
   --background-image: url(../images/cover-image-dark.png);
+  --dark-font-color: #000028;
+  --button-hover-color: rgba(255, 0, 112, 40%);
 }

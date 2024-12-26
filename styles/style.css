@@ -1,6 +1,5 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-@import 'light.css';
-@import 'variables.css';
+
 
 
 html, body {
@@ -10,8 +9,8 @@ html, body {
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
   background-image: var(--background-image);
-  background-color: var(--color-dark-blue);
-  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
   max-width: 1024px;
   display: flex;
   flex-direction: column;
@@ -73,7 +72,7 @@ html, body {
 .lightbulb__text {
   text-align: center;
   font-family: var(--font-family, Helvetica, Arial, sans-serif);
-  color: var(--color-magenta);
+  color: var(--minor-title-color);
   font-size: var(--font-size-reg);
   position: absolute;
   right: 25px;
@@ -100,7 +99,7 @@ html, body {
   font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   font-family: var(--font-family, Helvetica, Arial, sans-serif);
   color: var(--color-title);
-  text-shadow: 4px 4px 0 var(--color-magenta);
+  text-shadow: 4px 4px 0 var(--font-shadow-color);
   margin-inline-start: -20px;
 }
 
@@ -123,7 +122,7 @@ html, body {
   font-family: var(--font-family, Helvetica, Arial, sans-serif);
   font-size: var(--font-size-reg);
   text-transform: lowercase;
-  color: var(--color-magenta);
+  color: var(--minor-title-color);
 }
 
 .header__theme-menu-button_active {
@@ -132,7 +131,7 @@ html, body {
 }
 
 .header__theme-menu-button:hover {
-  outline: 1px solid rgba(255, 0, 112, 40%);
+  outline: 1px solid var(--button-hover-color);
 }
 
 .header__theme-menu-button:focus {
@@ -150,8 +149,8 @@ html, body {
 .title-decor {
   font-family: var(--font-family, Helvetica, Arial, sans-serif);
   font-weight: var(--font-weight-bold);
-  background-color:  var(--color-magenta);
-  color: var(--color-dark-blue);
+  background-color:  var(--font-background-color);
+  color: var(--dark-font-color);
   font-size: var(--font-size-reg);
   margin-block-end: 10px;
 }
@@ -159,8 +158,8 @@ html, body {
 .title-decor-regular {
   font-family: var(--font-family, Helvetica, Arial, sans-serif);
   font-weight: var(--font-weight-regular);
-  background-color:  var(--color-magenta);
-  color: var(--color-dark-blue);
+  background-color:  var(--font-background-color);
+  color: var(--dark-font-color);
   font-size: var(--font-size-reg);
   margin-block-end: 10px;
 }
@@ -169,7 +168,7 @@ html, body {
   font-family: var(--font-family, Helvetica, Arial, sans-serif);
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-reg);
-  color: var(--color-magenta);
+  color: var(--minor-title-color);
 }
 
 .description__container {
@@ -193,7 +192,7 @@ html, body {
   max-width: 984px;
 }
 
-.side_content {
+.advice_content {
   grid-template-columns: minmax(20%, 32%) 1fr;
 }
 
@@ -201,16 +200,17 @@ html, body {
   padding-block-end: 20px;
 }
 
-.column_paragraph {
+.question_paragraph {
   grid-template-rows: auto 1fr;
   grid-template-columns: 1fr;
 }
 
-.column_title {
+.question_title {
   grid-column: 1 / -1;
+  max-width: 250px;
 }
 
-.column_content {
+.question_content {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(25%, 1fr));
   gap: 20px;
@@ -223,7 +223,6 @@ html, body {
 
 .gallery {
  max-width: 100%;
- padding-block-start: -10px;
 }
 
 .gallery__container {
@@ -260,49 +259,24 @@ html, body {
 
 .footer {
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(3, 1fr);
   min-height: 668px;
   height: 100vh;
   position: relative;
 }
 
 .footer__header {
-  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   font-family: var(--font-family, Helvetica, Arial, sans-serif);
   color: var(--color-title);
   font-weight: 700;
-  text-shadow: 2px 2px 0 var(--color-magenta);
-  grid-row: 2;
+  text-shadow: 2px 2px 0 var(--font-shadow-color);
   align-self: center;
   text-align: center;
 }
 
-.footer::before {
-  position: absolute;
-  content: '';
-  right: 20px;
-  top: 20px;
-  width: 25px;
-  height: 25px;
-  border-right: 1px solid var(--color-magenta);
-  border-top: 1px solid var(--color-magenta);
-}
-
-.footer::after {
-  position: absolute;
-  content: '';
-  left: 20px;
-  bottom: 20px;
-  width: 25px;
-  height: 25px;
-  border-left: 1px solid var(--color-magenta);
-  border-bottom: 1px solid var(--color-magenta);
-}
-
 .link {
   text-decoration: none;
-  text-shadow: 2px 2px 0 var(--color-magenta);
+  text-shadow: 2px 2px 0 var(--font-shadow-color);
   cursor: pointer;
 }
 
@@ -315,79 +289,8 @@ html, body {
 }
 
 .page.theme_light {
-  background-image: var(--background-image-light);
-
-  .header__title {
-    color: var(--font-color-light-pink);
-  }
-
-  .header__theme-menu-button {
-    color: var(--font-color-light-grey);
-  }
-
-  .header__theme-menu-button_active {
-    border: 1px solid var(--font-color-light-grey);
-  }
-
-  .header__theme-menu-button:hover {
-    outline: 1px solid rgba(50, 49, 45, 0.4);
-  }
-
-  .header__theme-menu-button:focus {
-    outline: none;
-    border-bottom: 1px solid var(--font-color-light-grey);
-  }
-
-  .decorated-zone::after {
-    border-left: 1px solid var(--font-color-light-grey);
-    border-bottom: 1px solid var(--font-color-light-grey);
-  }
-
-  .decorated-zone::before {
-    border-right: 1px solid var(--font-color-light-grey);
-    border-top: 1px solid var(--font-color-light-grey);
-  }
-
-  .description {
-    color: var(--font-color-light-grey);
-  }
-
-  .title-decor {
-    background-color: var(--font-background);
-  }
-
-  .title-decor-regular {
-    background-color: var(--font-background);
-  }
-
-  .title__no-background {
-    color: var(--font-color-light-grey);
-  }
-
-  .footer__header {
-    color: var(--font-color-light-pink);
-  }
-
-  .footer::after {
-    border-left: 1px solid var(--font-color-light-grey);
-    border-bottom: 1px solid var(--font-color-light-grey);
-  }
-
-  .footer::before {
-    border-right: 1px solid var(--font-color-light-grey);
-    border-top: 1px solid var(--font-color-light-grey);
-  }
-
-  .link {
-    text-shadow: 2px 2px 0 var(--font-background);
-  }
-
-  .link:focus {
-    outline: 1px solid var(--font-color-light-grey);
-  }
-
-  .link:hover {
-    border-bottom: 1px solid var(--font-color-light-grey);
+  .lightbulb__text {
+    display: none;
   }
 }
 
@@ -417,21 +320,20 @@ html, body {
     padding-inline-end: 0px;
   }
 
-  .column_title {
+  .question_title {
     max-width: 150px;
   }
 
-  .column_content {
+  .question_content {
     display: flex;
     flex-direction: column;
   }
 
-  .column_paragraph {
+  .question_paragraph {
     grid-template-columns: repeat(3, 1fr);
   }
 
   .footer__header {
-    font-size: 120px;
     align-self: center;
   }
 }
@@ -453,9 +355,10 @@ html, body {
     gap: 0px;
     grid-template-columns: 1fr;
     /* grid-template-rows: repeat(4, minmax(min-content, 1fr)); */
-    grid-template-rows: repeat(4, auto); 
-    min-height: 100vh;
-    height: auto;
+    /* grid-template-rows: repeat(4, auto);  */
+   /*  grid-template-rows: auto min-content auto; */
+    min-height: 668px;
+    height: 100vh;
     width: 100%;
     max-width: 100vw;
     margin: 0px auto;
@@ -466,16 +369,16 @@ html, body {
 
   .header > * {
     max-width: 110%; 
-    overflow: hidden; 
     height: auto;
 }
 
 
   .header__theme-menu {
-    grid-area: 2 / 1 / 3 / 2;
+    grid-area: 1 / 1 / 2 / 2;
     margin: 0px;
     display: flex;
     flex-direction: column;
+    align-self: center;
   }
 
   .header__theme-menu-list {
@@ -484,16 +387,15 @@ html, body {
   }
 
   .header__title {
-    grid-area: 3 / 1 / 4 / 2;
+    grid-area: 2 / 1 / 3 / 2;
     font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-    font-size: 112px;
-    line-height: 0.8;
+    line-height: 1;
     margin: 0px;
     max-width: 100%;
   }
 
   .header__title-decor {
-    grid-area: 4 / 1 / 6 / 2;
+    grid-area: 3 / 1 / 4 / 2;
     margin: 0px;
     padding: 0px;
   }
@@ -504,7 +406,7 @@ html, body {
     gap: 0px;
   }
 
-  .column_title {
+  .question_title {
     gap: 0px;
     padding: 0px;
     margin: 0px;
@@ -517,12 +419,12 @@ html, body {
     gap: 20px;
   }
   
-  .column_paragraph {
+  .question_paragraph {
     grid-template-columns: 1fr;
     grid-template-rows: min-content;
   }
 
-  .column_content {
+  .question_content {
     grid-template-columns: 1fr;
     grid-template-rows: min-content;
     gap: 15px;
@@ -536,7 +438,7 @@ html, body {
     padding-top: 5px;
   }
 
-  .side_content {
+  .advice_content {
     margin: 0px;
     padding: 0px;
     gap: 15px;
@@ -606,77 +508,3 @@ html, body {
   }
 }
 
-@media (prefers-color-scheme: light) {
-  
-  .page {
-    background-image: var(--background-image-light);
-  }
-
-  .header__title {
-    color: var(--font-color-light-pink);
-  }
-
-  .header__theme-menu-button {
-    color: var(--font-color-light-grey);
-  }
-
-  .header__theme-menu-button_active {
-    border: 1px solid var(--font-color-light-grey);
-  }
-
-  .header__theme-menu-button:hover {
-    outline: 1px solid rgba(50, 49, 45, 0.4);
-  }
-
-  .header__theme-menu-button:focus {
-    text-decoration: underline var(--font-color-light-grey);
-  }
-
-  .decorated-zone::after {
-    border-left: 1px solid var(--font-color-light-grey);
-    border-bottom: 1px solid var(--font-color-light-grey);
-  }
-
-  .decorated-zone::before {
-    border-right: 1px solid var(--font-color-light-grey);
-    border-top: 1px solid var(--font-color-light-grey);
-  }
-
-  .description {
-    color: var(--font-color-light-grey);
-  }
-
-  .title-decor {
-    background-color: var(--font-background);
-  }
-
-  .title-decor-regular {
-    background-color: var(--font-background);
-  }
-
-  .title__no-background {
-    color: var(--font-color-light-grey);
-  }
-
-  .footer__header {
-    color: var(--font-color-light-pink);
-  }
-
-  .footer::after {
-    border-left: 1px solid var(--font-color-light-grey);
-    border-bottom: 1px solid var(--font-color-light-grey);
-  }
-
-  .footer::before {
-    border-right: 1px solid var(--font-color-light-grey);
-    border-top: 1px solid var(--font-color-light-grey);
-  }
-
-  .link:focus {
-    outline: 1px solid var(--font-color-light-grey);
-  }
-
-  .lightbulb__text {
-    display: none;
-  }
-}

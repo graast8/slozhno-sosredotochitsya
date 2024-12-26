@@ -6,22 +6,38 @@
 
 
 
-:root {
-  --light-background-color: #FFF1F7;
-  --font-color-light-pink: #FFC2E6;
-  --font-color-light-grey: #353430;
-  --font-background: #FF8DCB;
-  --background-image-light: url(../images/cover-image-light.png);
-}
-
 .page.theme_light {
   /* сохраните этот селектор в приведённом виде.
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
+  --font-color-desc: #353430;
+  --color-title: #FFC2E6;
+  --background-image: url(../images/cover-image-light.png);
+  --background-color: #FFF1F7;
+  --font-background-color: #FF8DCB;
+  --dark-font-color: #353430;
+  --color-magenta: #353430;
+  --minor-title-color: #353430;
+  --button-hover-color: rgba(50, 49, 45, 0.4);
+}
+
+@media (prefers-color-scheme: light) {
+ 
+  :root {
+    --font-color-desc: #353430;
+    --color-title: #FFC2E6;
+    --background-image: url(../images/cover-image-light.png);
+    --background-color: #FFF1F7;
+    --font-background-color: #FF8DCB;
+    --dark-font-color: #353430;
+    --color-magenta: #353430;
+    --minor-title-color: #353430;
+    --button-hover-color: rgba(50, 49, 45, 0.4);
+  }
+
   .lightbulb__text {
     display: none;
   }
-
 }
 
