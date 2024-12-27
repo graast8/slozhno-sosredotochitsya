@@ -9,6 +9,7 @@ html, body {
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
   background-image: var(--background-image);
+  background-attachment: fixed;
   background-size: cover;
   background-position: center;
   max-width: 1024px;
@@ -20,7 +21,7 @@ html, body {
 .content {
   display: flex;
   flex-direction: column;
-  gap: 82px;
+  gap: 72px;
   padding: 0px 20px 0px 20px;
 } 
 
@@ -50,19 +51,27 @@ html, body {
 .decorated-zone::before {
   position: absolute;
   content: '';
-  right: 10px;
-  top: 15px;
+  right: 20px;
+  top: 20px;
   width: 25px;
   height: 25px;
   border-right: 1px solid var(--color-magenta);
   border-top: 1px solid var(--color-magenta);
 }
 
+.footer.decorated-zone::before {
+  top: 30px;
+}
+
+.footer.decorated-zone::after {
+  bottom: 10px;
+}
+
 .decorated-zone::after {
   position: absolute;
   content: '';
-  left: 10px;
-  bottom: 15px;
+  left: 20px;
+  bottom: 20px;
   width: 25px;
   height: 25px;
   border-left: 1px solid var(--color-magenta);
@@ -155,6 +164,10 @@ html, body {
   margin-block-end: 10px;
 }
 
+.title-decor-gap {
+  margin-block-end: 18px;
+}
+
 .title-decor-regular {
   font-family: var(--font-family, Helvetica, Arial, sans-serif);
   font-weight: var(--font-weight-regular);
@@ -178,7 +191,7 @@ html, body {
 }
 
 .description {
-  padding-block-end: 3px;
+  padding-block-end: 10px;
   font-family: var(--font-family, Helvetica, Arial, sans-serif);
   font-weight: var(--font-weight-regular);
   font-size: var(--font-size-reg);
@@ -197,7 +210,7 @@ html, body {
 }
 
 .paragraph_gap {
-  padding-block-end: 20px;
+  padding-block-end: 10px;
 }
 
 .question_paragraph {
@@ -207,7 +220,7 @@ html, body {
 
 .question_title {
   grid-column: 1 / -1;
-  max-width: 250px;
+  max-width: 270px;
 }
 
 .question_content {
@@ -218,7 +231,7 @@ html, body {
 }
 
 .gallery_gap {
-  margin-block-end: -25px;
+  margin-block-end: -10px;
 }
 
 .gallery {
@@ -281,11 +294,11 @@ html, body {
 }
 
 .link:hover {
-  border-bottom: 1px solid var(--color-magenta);
+  border-bottom: 1px solid var(--link-hover-color);
 }
 
 .link:focus {
-  outline: 1px solid var(--font-color-desc);
+  outline: 1px solid var(--link-focus-color);
 }
 
 .page.theme_light {
@@ -297,7 +310,7 @@ html, body {
 @media (min-width: 768px) and (max-width: 1023px) {
 
   .content {
-    margin-inline-end: 20px;
+    margin-inline-end: 10px;
   }
 
   .header__title-decor {
@@ -315,9 +328,17 @@ html, body {
     flex-direction: column;
   }
 
+  .advice_content {
+    gap: 20px;
+  }
+
   .content_section {
-    grid-template-columns: 32% 68%;
+    grid-template-columns: 33% 66%;
     padding-inline-end: 0px;
+  }
+
+  .gallery-title {
+    padding-block-end: 10px;
   }
 
   .question_title {
@@ -327,6 +348,7 @@ html, body {
   .question_content {
     display: flex;
     flex-direction: column;
+    gap: 10px;
   }
 
   .question_paragraph {
@@ -335,6 +357,7 @@ html, body {
 
   .footer__header {
     align-self: center;
+    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   }
 }
 
@@ -356,19 +379,17 @@ html, body {
     grid-template-columns: 1fr;
     /* grid-template-rows: repeat(4, minmax(min-content, 1fr)); */
     /* grid-template-rows: repeat(4, auto);  */
-   /*  grid-template-rows: auto min-content auto; */
+    grid-template-rows: auto min-content auto;
     min-height: 668px;
     height: 100vh;
     width: 100%;
     max-width: 100vw;
     margin: 0px auto;
-    padding-inline-end: 10px;
-    padding-block-start: 20px;
     box-sizing: border-box;
   }
 
   .header > * {
-    max-width: 110%; 
+    max-width: 100%; 
     height: auto;
 }
 
