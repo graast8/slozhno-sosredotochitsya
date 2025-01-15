@@ -21,7 +21,7 @@
   --background-image: url(../images/cover-image-dark.png);
   --dark-font-color: #000028;
   --button-hover-color: rgba(255, 0, 112, 40%);
-  --link-focus-color: #FF0070;
+  --link-focus-color: #F1B2CE;
   --link-hover-color: #F1B2CE;
 }
 
@@ -46,4 +46,7 @@
   --dark-font-color: #000028;
   --button-hover-color: rgba(255, 0, 112, 40%);
   
+  .lightbulb__text {
+    display: block;
+  }
 }
