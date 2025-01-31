@@ -394,7 +394,7 @@ html, body {
     display: flex;
     flex-direction: column;
     align-self: center;
-    padding-block-start: 12px;
+    padding-block-start: 20px;
   }
 
   .header__theme-menu-list {
@@ -405,9 +405,10 @@ html, body {
   .header__title {
     grid-area: 2 / 1 / 2 / 2;
     font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-    line-height: 80%;
+    line-height: 87%;
     margin: 0px;
     max-width: 100%;
+    padding-top: 10px;
   }
 
   .header__title-decor {
@@ -423,6 +424,10 @@ html, body {
   .question_title {
     gap: 0px;
     padding: 0px;
+  }
+
+  .title-decor {
+    margin-block-end: 13px;
   }
 
   .content_section {
@@ -467,12 +472,12 @@ html, body {
 
   .footer::before {
     right: 9px;
-    top: 2px;
+    top: 10px;
   }
 
   .footer::after {
     left: 11px;
-    bottom: 19px;
+    bottom: 10px;
   }
 
   .footer__header {
